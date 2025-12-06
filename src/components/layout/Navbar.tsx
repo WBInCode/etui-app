@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import { CartIcon } from '@/components/cart';
 import { SearchBar } from './SearchBar';
 import { UserMenu } from '@/components/auth';
+import { Button } from '@/components/ui/Button';
 
 // Logo icon - stylized phone case
 const CaseStudioLogo = ({ className }: { className?: string }) => (

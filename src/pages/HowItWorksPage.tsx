@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Palette, Settings, CreditCard, Truck, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/Button';
 
 const steps = [
   {
