@@ -72,7 +72,7 @@ const faqCategories = [
       },
       {
         q: 'Jak mogę usunąć swoje konto?',
-        a: 'Skontaktuj się z nami przez formularz kontaktowy lub napisz na support@casestudio.pl. Usuniemy Twoje dane w ciągu 7 dni.',
+        a: 'Skontaktuj się z nami przez formularz kontaktowy lub napisz na support@yourbrand.pl. Usuniemy Twoje dane w ciągu 7 dni.',
       },
       {
         q: 'Czy moje dane są bezpieczne?',

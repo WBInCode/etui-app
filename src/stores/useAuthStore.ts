@@ -8,11 +8,11 @@ import type { User, LoginCredentials, RegisterCredentials, AuthError } from '@/t
 
 const mockUsers: Array<{ email: string; password: string; user: User }> = [
   {
-    email: 'demo@casestudio.pl',
+    email: 'demo@yourbrand.pl',
     password: 'demo123',
     user: {
       id: '1',
-      email: 'demo@casestudio.pl',
+      email: 'demo@yourbrand.pl',
       firstName: 'Jan',
       lastName: 'Kowalski',
       createdAt: new Date('2024-01-15'),

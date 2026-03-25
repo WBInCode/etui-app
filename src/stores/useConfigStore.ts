@@ -202,7 +202,7 @@ export const useConfigStore = create<ConfigStore>()(
     },
   })),
   {
-    name: 'casestudio-config',
+    name: 'app-config',
     partialize: (state) => ({
       phoneSelection: state.phoneSelection,
       configuration: state.configuration,

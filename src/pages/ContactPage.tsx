@@ -14,8 +14,7 @@ export function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Integrate with backend
-    console.log('Form submitted:', formState);
+    // Integrate with your backend API here
     setIsSubmitted(true);
   };
 
@@ -59,10 +58,10 @@ export function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Email</h3>
                   <a
-                    href="mailto:kontakt@casestudio.pl"
+                    href="mailto:kontakt@yourbrand.pl"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    kontakt@casestudio.pl
+                    kontakt@yourbrand.pl
                   </a>
                 </div>
               </div>
@@ -94,8 +93,8 @@ export function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Adres</h3>
                   <p className="text-muted-foreground">
-                    ul. Przykładowa 123<br />
-                    30-001 Kraków<br />
+                    ul. Twoja Ulica 1<br />
+                    00-001 Twoje Miasto<br />
                     Polska
                   </p>
                 </div>

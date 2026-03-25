@@ -9,7 +9,7 @@ import { UserMenu } from '@/components/auth';
 import { Button } from '@/components/ui/Button';
 
 // Logo icon - stylized phone case
-const CaseStudioLogo = ({ className }: { className?: string }) => (
+const BrandLogo = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* Phone case outline */}
     <rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" strokeWidth="2" />
@@ -93,10 +93,10 @@ export function Navbar() {
             {/* Center - Logo */}
             <Link to="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-3 group">
               <div className="w-11 h-11 rounded-xl bg-foreground flex items-center justify-center transform group-hover:scale-105 transition-transform">
-                <CaseStudioLogo className="w-6 h-6 text-background" />
+                <BrandLogo className="w-6 h-6 text-background" />
               </div>
               <div className="hidden sm:block">
-                <span className="font-bold text-2xl text-foreground">CaseStudio</span>
+                <span className="font-bold text-2xl text-foreground">YourBrand</span>
                 <span className="text-primary font-bold text-2xl">.</span>
               </div>
             </Link>

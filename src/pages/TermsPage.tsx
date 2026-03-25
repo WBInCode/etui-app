@@ -4,11 +4,11 @@ const sections = [
   {
     title: '1. Postanowienia ogólne',
     content: `
-      1.1. Niniejszy Regulamin określa zasady korzystania ze sklepu internetowego CaseStudio, dostępnego pod adresem casestudio.pl.
+      1.1. Niniejszy Regulamin określa zasady korzystania ze sklepu internetowego YourBrand, dostępnego pod adresem yourbrand.pl.
       
-      1.2. Właścicielem sklepu jest CaseStudio Sp. z o.o. z siedzibą w Warszawie, ul. Przykładowa 123, 00-001 Warszawa, NIP: 1234567890, REGON: 123456789.
+      1.2. Właścicielem sklepu jest YourBrand Sp. z o.o. z siedzibą w Warszawie, ul. Twoja Ulica 1, 00-001 Warszawa, NIP: 0000000000, REGON: 000000000.
       
-      1.3. Kontakt ze sklepem możliwy jest poprzez e-mail: kontakt@casestudio.pl lub telefonicznie: +48 123 456 789.
+      1.3. Kontakt ze sklepem możliwy jest poprzez e-mail: kontakt@yourbrand.pl lub telefonicznie: +48 000 000 000.
       
       1.4. Korzystanie ze sklepu oznacza akceptację niniejszego Regulaminu.
     `,
@@ -16,7 +16,7 @@ const sections = [
   {
     title: '2. Definicje',
     content: `
-      2.1. Sklep - sklep internetowy CaseStudio dostępny pod adresem casestudio.pl.
+      2.1. Sklep - sklep internetowy YourBrand dostępny pod adresem yourbrand.pl.
       
       2.2. Klient - osoba fizyczna, prawna lub jednostka organizacyjna dokonująca zakupów w Sklepie.
       
@@ -92,7 +92,7 @@ const sections = [
     content: `
       7.1. Sklep udziela 2-letniej gwarancji na wszystkie Produkty.
       
-      7.2. Reklamację można złożyć drogą mailową na adres: reklamacje@casestudio.pl.
+      7.2. Reklamację można złożyć drogą mailową na adres: reklamacje@yourbrand.pl.
       
       7.3. Reklamacja zostanie rozpatrzona w terminie 14 dni od jej otrzymania.
       
@@ -160,8 +160,8 @@ export function TermsPage() {
         >
           <p>
             W razie pytań dotyczących Regulaminu prosimy o kontakt:{' '}
-            <a href="mailto:kontakt@casestudio.pl" className="text-primary hover:underline">
-              kontakt@casestudio.pl
+            <a href="mailto:kontakt@yourbrand.pl" className="text-primary hover:underline">
+              kontakt@yourbrand.pl
             </a>
           </p>
         </motion.div>
