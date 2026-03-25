@@ -7,7 +7,7 @@ const steps = [
   {
     step: 1,
     title: 'Zgłoś zwrot',
-    description: 'Wypełnij formularz zwrotu online lub wyślij e-mail na adres zwroty@casestudio.pl',
+    description: 'Wypełnij formularz zwrotu online lub wyślij e-mail na adres zwroty@yourbrand.pl',
     icon: RotateCcw,
   },
   {
@@ -185,7 +185,7 @@ export function ReturnsPage() {
             Potrzebujesz pomocy ze zwrotem?
           </h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="mailto:zwroty@casestudio.pl">
+            <a href="mailto:zwroty@yourbrand.pl">
               <Button variant="primary" size="lg">
                 Napisz do nas
               </Button>

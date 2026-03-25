@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Instagram, Facebook, Twitter } from 'lucide-react';
 
 // Logo icon - stylized phone case
-const CaseStudioLogo = ({ className }: { className?: string }) => (
+const BrandLogo = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* Phone case outline */}
     <rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" strokeWidth="2" />
@@ -47,10 +47,10 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-xl bg-foreground flex items-center justify-center">
-                <CaseStudioLogo className="w-5 h-5 text-background" />
+                <BrandLogo className="w-5 h-5 text-background" />
               </div>
               <div>
-                <span className="font-bold text-lg text-foreground">CaseStudio</span>
+                <span className="font-bold text-lg text-foreground">YourBrand</span>
                 <span className="text-primary font-bold">.</span>
               </div>
             </Link>
@@ -135,27 +135,28 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} CaseStudio. Wszelkie prawa zastrzeżone.
+            © {currentYear} YourBrand. Wszelkie prawa zastrzeżone.
           </p>
           <div className="flex items-center gap-3">
             {/* Payment icons from Logo.dev */}
+            {/* Dodaj tu ikony metod płatności — użyj Logo.dev z tokenem z .env lub własne SVG */}
             <img 
-              src="https://img.logo.dev/cardinalcommerce.com?token=pk_Dq3xRMdJT2qj7Iv75RkcGQ" 
+              src={`https://img.logo.dev/cardinalcommerce.com?token=${import.meta.env.VITE_LOGO_DEV_TOKEN}`} 
               alt="Visa" 
               className="h-8 rounded"
             />
             <img 
-              src="https://img.logo.dev/mastercard.com.au?token=pk_Dq3xRMdJT2qj7Iv75RkcGQ" 
+              src={`https://img.logo.dev/mastercard.com.au?token=${import.meta.env.VITE_LOGO_DEV_TOKEN}`} 
               alt="Mastercard" 
               className="h-8 rounded"
             />
             <img 
-              src="https://img.logo.dev/groupone.pl?token=pk_Dq3xRMdJT2qj7Iv75RkcGQ" 
+              src={`https://img.logo.dev/groupone.pl?token=${import.meta.env.VITE_LOGO_DEV_TOKEN}`} 
               alt="BLIK" 
               className="h-8 rounded"
             />
             <img 
-              src="https://img.logo.dev/przelewy24.pl?token=pk_Dq3xRMdJT2qj7Iv75RkcGQ" 
+              src={`https://img.logo.dev/przelewy24.pl?token=${import.meta.env.VITE_LOGO_DEV_TOKEN}`} 
               alt="Przelewy24" 
               className="h-8 rounded"
             />

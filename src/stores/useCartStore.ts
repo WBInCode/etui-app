@@ -120,7 +120,7 @@ export const useCartStore = create<CartStore>()(
       },
     }),
     {
-      name: 'casestudio-cart',
+      name: 'app-cart',
       partialize: (state) => ({ items: state.items }), // Only persist items, not UI state
     }
   )

@@ -2,7 +2,7 @@ import type { Product } from '@/types';
 
 export const phoneCaseProduct: Product = {
   id: 'phone-case-pro',
-  name: 'Case Studio Pro',
+  name: 'Phone Case Pro',
   description: 'Zaprojektuj swoje unikalne etui na telefon',
   basePrice: 79,
   currency: 'PLN',

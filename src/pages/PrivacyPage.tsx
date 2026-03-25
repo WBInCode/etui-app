@@ -4,12 +4,12 @@ const sections = [
   {
     title: '1. Administrator danych',
     content: `
-      Administratorem Twoich danych osobowych jest CaseStudio Sp. z o.o. z siedzibą w Warszawie, ul. Przykładowa 123, 00-001 Warszawa.
+      Administratorem Twoich danych osobowych jest YourBrand Sp. z o.o. z siedzibą w Warszawie, ul. Twoja Ulica 1, 00-001 Warszawa.
       
       Kontakt z administratorem:
-      - E-mail: dane@casestudio.pl
-      - Telefon: +48 123 456 789
-      - Adres: ul. Przykładowa 123, 00-001 Warszawa
+      - E-mail: dane@yourbrand.pl
+      - Telefon: +48 000 000 000
+      - Adres: ul. Twoja Ulica 1, 00-001 Warszawa
     `,
   },
   {
@@ -71,7 +71,7 @@ const sections = [
       - Prawo do sprzeciwu wobec przetwarzania
       - Prawo do wycofania zgody w dowolnym momencie
       
-      Aby skorzystać z tych praw, skontaktuj się z nami: dane@casestudio.pl
+      Aby skorzystać z tych praw, skontaktuj się z nami: dane@yourbrand.pl
     `,
   },
   {
@@ -128,8 +128,8 @@ const sections = [
     content: `
       W sprawach związanych z ochroną danych osobowych możesz kontaktować się:
       
-      E-mail: dane@casestudio.pl
-      Telefon: +48 123 456 789
+      E-mail: dane@yourbrand.pl
+      Telefon: +48 000 000 000
       
       Masz również prawo wnieść skargę do Prezesa Urzędu Ochrony Danych Osobowych:
       ul. Stawki 2, 00-193 Warszawa
@@ -194,8 +194,8 @@ export function PrivacyPage() {
         >
           <p>
             Pytania dotyczące prywatności?{' '}
-            <a href="mailto:dane@casestudio.pl" className="text-primary hover:underline">
-              dane@casestudio.pl
+            <a href="mailto:dane@yourbrand.pl" className="text-primary hover:underline">
+              dane@yourbrand.pl
             </a>
           </p>
         </motion.div>

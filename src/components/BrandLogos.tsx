@@ -1,7 +1,7 @@
 // Komponenty logo producentów telefonów używające Logo.dev CDN
 
-// Klucz API Logo.dev
-const LOGO_DEV_TOKEN = 'pk_Dq3xRMdJT2qj7Iv75RkcGQ';
+// Klucz API Logo.dev — ustaw w pliku .env jako VITE_LOGO_DEV_TOKEN
+const LOGO_DEV_TOKEN = import.meta.env.VITE_LOGO_DEV_TOKEN || '';
 
 // Mapowanie producentów na ich domeny
 const brandDomains: Record<string, string> = {

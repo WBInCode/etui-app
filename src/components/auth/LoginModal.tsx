@@ -112,7 +112,7 @@ export function LoginModal() {
                 <p className="text-muted-foreground mt-1">
                   {loginModalMode === 'login'
                     ? 'Witaj z powrotem! Zaloguj się do swojego konta.'
-                    : 'Dołącz do CaseStudio i twórz unikalne etui.'}
+                    : 'Dołącz do YourBrand i twórz unikalne etui.'}
                 </p>
               </div>
 
