@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { User, LoginCredentials, RegisterCredentials, AuthError } from '@/types/auth';
+import { siteConfig } from '@/site.config';
 
 // ============================================
 // MOCK USER DATABASE (for demo purposes)
@@ -8,11 +9,11 @@ import type { User, LoginCredentials, RegisterCredentials, AuthError } from '@/t
 
 const mockUsers: Array<{ email: string; password: string; user: User }> = [
   {
-    email: 'demo@yourbrand.pl',
-    password: 'demo123',
+    email: siteConfig.demo.email,
+    password: siteConfig.demo.password,
     user: {
       id: '1',
-      email: 'demo@yourbrand.pl',
+      email: siteConfig.demo.email,
       firstName: 'Jan',
       lastName: 'Kowalski',
       createdAt: new Date('2024-01-15'),

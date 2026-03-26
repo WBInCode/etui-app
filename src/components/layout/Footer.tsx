@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Instagram, Facebook, Twitter } from 'lucide-react';
+import { siteConfig } from '@/site.config';
 
 // Logo icon - stylized phone case
 const BrandLogo = ({ className }: { className?: string }) => (
@@ -50,7 +51,7 @@ export function Footer() {
                 <BrandLogo className="w-5 h-5 text-background" />
               </div>
               <div>
-                <span className="font-bold text-lg text-foreground">YourBrand</span>
+                <span className="font-bold text-lg text-foreground">{siteConfig.name}</span>
                 <span className="text-primary font-bold">.</span>
               </div>
             </Link>
@@ -135,7 +136,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} YourBrand. Wszelkie prawa zastrzeżone.
+            © {currentYear} {siteConfig.name}. Wszelkie prawa zastrzeżone.
           </p>
           <div className="flex items-center gap-3">
             {/* Payment icons from Logo.dev */}

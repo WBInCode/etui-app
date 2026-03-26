@@ -1,15 +1,16 @@
 import { motion } from 'framer-motion';
+import { siteConfig } from '@/site.config';
 
 const sections = [
   {
     title: '1. Administrator danych',
     content: `
-      Administratorem Twoich danych osobowych jest YourBrand Sp. z o.o. z siedzibą w Warszawie, ul. Twoja Ulica 1, 00-001 Warszawa.
+      Administratorem Twoich danych osobowych jest ${siteConfig.legal.companyName} z siedzibą w ${siteConfig.address.city}, ${siteConfig.address.full}.
       
       Kontakt z administratorem:
-      - E-mail: dane@yourbrand.pl
-      - Telefon: +48 000 000 000
-      - Adres: ul. Twoja Ulica 1, 00-001 Warszawa
+      - E-mail: ${siteConfig.email.data}
+      - Telefon: ${siteConfig.phone}
+      - Adres: ${siteConfig.address.full}
     `,
   },
   {
@@ -71,7 +72,7 @@ const sections = [
       - Prawo do sprzeciwu wobec przetwarzania
       - Prawo do wycofania zgody w dowolnym momencie
       
-      Aby skorzystać z tych praw, skontaktuj się z nami: dane@yourbrand.pl
+      Aby skorzystać z tych praw, skontaktuj się z nami: ${siteConfig.email.data}
     `,
   },
   {
@@ -128,8 +129,8 @@ const sections = [
     content: `
       W sprawach związanych z ochroną danych osobowych możesz kontaktować się:
       
-      E-mail: dane@yourbrand.pl
-      Telefon: +48 000 000 000
+      E-mail: ${siteConfig.email.data}
+      Telefon: ${siteConfig.phone}
       
       Masz również prawo wnieść skargę do Prezesa Urzędu Ochrony Danych Osobowych:
       ul. Stawki 2, 00-193 Warszawa
@@ -194,8 +195,8 @@ export function PrivacyPage() {
         >
           <p>
             Pytania dotyczące prywatności?{' '}
-            <a href="mailto:dane@yourbrand.pl" className="text-primary hover:underline">
-              dane@yourbrand.pl
+            <a href={`mailto:${siteConfig.email.data}`} className="text-primary hover:underline">
+              {siteConfig.email.data}
             </a>
           </p>
         </motion.div>

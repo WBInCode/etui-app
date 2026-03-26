@@ -2,12 +2,13 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Package, RotateCcw, Clock, AlertTriangle, CheckCircle, XCircle } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { siteConfig } from '@/site.config';
 
 const steps = [
   {
     step: 1,
     title: 'Zgłoś zwrot',
-    description: 'Wypełnij formularz zwrotu online lub wyślij e-mail na adres zwroty@yourbrand.pl',
+    description: `Wypełnij formularz zwrotu online lub wyślij e-mail na adres ${siteConfig.email.returns}`,
     icon: RotateCcw,
   },
   {
@@ -185,7 +186,7 @@ export function ReturnsPage() {
             Potrzebujesz pomocy ze zwrotem?
           </h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="mailto:zwroty@yourbrand.pl">
+            <a href={`mailto:${siteConfig.email.returns}`}>
               <Button variant="primary" size="lg">
                 Napisz do nas
               </Button>

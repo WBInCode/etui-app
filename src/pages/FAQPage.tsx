@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { siteConfig } from '@/site.config';
 
 const faqCategories = [
   {
@@ -72,7 +73,7 @@ const faqCategories = [
       },
       {
         q: 'Jak mogę usunąć swoje konto?',
-        a: 'Skontaktuj się z nami przez formularz kontaktowy lub napisz na support@yourbrand.pl. Usuniemy Twoje dane w ciągu 7 dni.',
+        a: `Skontaktuj się z nami przez formularz kontaktowy lub napisz na ${siteConfig.email.support}. Usuniemy Twoje dane w ciągu 7 dni.`,
       },
       {
         q: 'Czy moje dane są bezpieczne?',

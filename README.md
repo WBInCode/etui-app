@@ -29,13 +29,15 @@ A modern, fully responsive e-commerce phone case configurator built with React 1
 |------------|---------|
 | **React 19** | UI framework |
 | **Vite 7** | Build tool & dev server |
-| **TypeScript 5.9** | Type safety |
+| **TypeScript 5.9** | Type safety (strict mode) |
 | **Tailwind CSS 4** | Utility-first styling |
 | **Zustand** | Lightweight state management |
 | **Framer Motion** | Animations |
-| **React Router 7** | Client-side routing |
+| **React Router 7** | Client-side routing with lazy loading |
 | **Zod** | Schema validation |
 | **Lucide React** | Icons |
+| **Vitest** | Unit testing |
+| **Prettier** | Code formatting |
 
 ---
 
@@ -53,7 +55,26 @@ npm run dev
 
 # 4. Build for production
 npm run build
+
+# 5. Run tests
+npm test
+
+# 6. Format code
+npm run format
 ```
+
+### Available Scripts
+
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Type-check & build for production |
+| `npm run preview` | Preview production build |
+| `npm run lint` | Run ESLint |
+| `npm run lint:fix` | Auto-fix ESLint issues |
+| `npm test` | Run tests (Vitest) |
+| `npm run test:watch` | Run tests in watch mode |
+| `npm run format` | Format code with Prettier |
 
 ---
 
@@ -84,27 +105,40 @@ src/
 
 ## 🎨 Customization Guide
 
-### Brand Name & Logo
-- Replace `YourBrand` in `src/components/layout/Navbar.tsx` and `Footer.tsx`
-- Update SVG logo in the same files (look for `BrandLogo` component)
-- Update page title in `index.html`
+### 1. Brand & Company Info (start here!)
 
-### Colors & Theme
+All placeholder data ("YourBrand", emails, phone, address, NIP) is centralized in a single file:
+
+```
+src/site.config.ts
+```
+
+Open it and replace the values with your own. The config is used across the entire app — Navbar, Footer, legal pages, auth, contact info, etc.
+
+### 2. Logo
+- Update the `BrandLogo` SVG component in `src/components/layout/Navbar.tsx` and `Footer.tsx`
+- Replace `public/favicon.svg` with your own favicon
+
+### 3. SEO & Meta Tags
+- Update `index.html` — title, meta description, Open Graph image URL, canonical URL
+- Update `public/sitemap.xml` — replace `yourbrand.pl` with your domain
+- Update `public/robots.txt` — same
+
+### 4. Colors & Theme
 - Edit CSS variables in `src/index.css` (uses OKLCH color space)
 - Change primary, secondary, accent, background, foreground, etc.
 
-### Products & Pricing
+### 5. Products & Pricing
 - Edit products in `src/data/products/phoneCase.ts`
 - Add phone models in `src/data/phones.json`
-- Adjust pricing in `src/lib/pricing.ts`
+- Pricing logic in `src/lib/pricing.ts`
 
-### Content & Texts
+### 6. Content & Texts
 - All page content is in `src/pages/*.tsx`
-- Legal pages (Terms, Privacy, Returns) have placeholder company data — replace with yours
+- Legal pages (Terms, Privacy, Returns) pull company data from `site.config.ts`
 
-### Contact & Company Info
-- Search for `yourbrand.pl` and replace with your domain
-- Update addresses, phone numbers, emails across pages
+### 7. Analytics
+- Uncomment the Google Analytics block in `index.html` and add your measurement ID
 
 ---
 
@@ -141,40 +175,14 @@ Copy `.env.example` to `.env` and fill in your values.
 ## ⚠️ Important Notes
 
 - **No backend included** — auth is mock-based (demo user), checkout has no payment processor. Connect your own API.
-- **Demo credentials** — `demo@yourbrand.pl` / `demo123` (replace in `src/stores/useAuthStore.ts`)
+- **Demo credentials** — configured in `src/site.config.ts` (default: `demo@yourbrand.pl` / `demo123`)
 - **All data is client-side** — stored in localStorage via Zustand persist middleware.
+- **Polish language** — all UI text is in Polish. For multi-language support, consider adding `react-i18next`.
+- **Error Boundary** — global error boundary is included in `src/components/ErrorBoundary.tsx`.
+- **Lazy loading** — secondary pages are code-split with `React.lazy()` for faster initial load.
 
 ---
 
 ## 📝 License
 
 This template is licensed for use in a single project. See [LICENSE](LICENSE) for details.
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```

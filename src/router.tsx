@@ -1,18 +1,36 @@
+import { lazy, Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import { RootLayout } from '@/components/layout/RootLayout';
+
+// Eager-load critical pages
 import { HomePage } from '@/pages/HomePage';
 import { ConfiguratorPage } from '@/pages/ConfiguratorPage';
 import { SelectPhonePage } from '@/pages/SelectPhonePage';
-import { GalleryPage } from '@/pages/GalleryPage';
-import { HowItWorksPage } from '@/pages/HowItWorksPage';
-import { AboutPage } from '@/pages/AboutPage';
-import { FAQPage } from '@/pages/FAQPage';
-import { ContactPage } from '@/pages/ContactPage';
-import { TermsPage } from '@/pages/TermsPage';
-import { PrivacyPage } from '@/pages/PrivacyPage';
-import { ReturnsPage } from '@/pages/ReturnsPage';
-import { AccountPage } from '@/pages/AccountPage';
-import { CheckoutPage } from '@/pages/CheckoutPage';
+
+// Lazy-load secondary pages
+const GalleryPage = lazy(() => import('@/pages/GalleryPage').then(m => ({ default: m.GalleryPage })));
+const HowItWorksPage = lazy(() => import('@/pages/HowItWorksPage').then(m => ({ default: m.HowItWorksPage })));
+const AboutPage = lazy(() => import('@/pages/AboutPage').then(m => ({ default: m.AboutPage })));
+const FAQPage = lazy(() => import('@/pages/FAQPage').then(m => ({ default: m.FAQPage })));
+const ContactPage = lazy(() => import('@/pages/ContactPage').then(m => ({ default: m.ContactPage })));
+const TermsPage = lazy(() => import('@/pages/TermsPage').then(m => ({ default: m.TermsPage })));
+const PrivacyPage = lazy(() => import('@/pages/PrivacyPage').then(m => ({ default: m.PrivacyPage })));
+const ReturnsPage = lazy(() => import('@/pages/ReturnsPage').then(m => ({ default: m.ReturnsPage })));
+const AccountPage = lazy(() => import('@/pages/AccountPage').then(m => ({ default: m.AccountPage })));
+const CheckoutPage = lazy(() => import('@/pages/CheckoutPage').then(m => ({ default: m.CheckoutPage })));
+const NotFoundPage = lazy(() => import('@/pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
+
+function LazyPage({ children }: { children: React.ReactNode }) {
+  return (
+    <Suspense fallback={
+      <div className="min-h-[60vh] flex items-center justify-center">
+        <div className="w-8 h-8 border-4 border-primary/30 border-t-primary rounded-full animate-spin" />
+      </div>
+    }>
+      {children}
+    </Suspense>
+  );
+}
 
 export const router = createBrowserRouter([
   {
@@ -33,49 +51,49 @@ export const router = createBrowserRouter([
       },
       {
         path: 'gallery',
-        element: <GalleryPage />,
+        element: <LazyPage><GalleryPage /></LazyPage>,
       },
       {
         path: 'how-it-works',
-        element: <HowItWorksPage />,
+        element: <LazyPage><HowItWorksPage /></LazyPage>,
       },
       {
         path: 'about',
-        element: <AboutPage />,
+        element: <LazyPage><AboutPage /></LazyPage>,
       },
       {
         path: 'faq',
-        element: <FAQPage />,
+        element: <LazyPage><FAQPage /></LazyPage>,
       },
       {
         path: 'contact',
-        element: <ContactPage />,
+        element: <LazyPage><ContactPage /></LazyPage>,
       },
       // Checkout
       {
         path: 'checkout',
-        element: <CheckoutPage />,
+        element: <LazyPage><CheckoutPage /></LazyPage>,
       },
       // Account pages
       {
         path: 'account',
-        element: <AccountPage />,
+        element: <LazyPage><AccountPage /></LazyPage>,
       },
       {
         path: 'account/orders',
-        element: <AccountPage />,
+        element: <LazyPage><AccountPage /></LazyPage>,
       },
       {
         path: 'account/favorites',
-        element: <AccountPage />,
+        element: <LazyPage><AccountPage /></LazyPage>,
       },
       {
         path: 'account/settings',
-        element: <AccountPage />,
+        element: <LazyPage><AccountPage /></LazyPage>,
       },
       {
         path: 'account/security',
-        element: <AccountPage />,
+        element: <LazyPage><AccountPage /></LazyPage>,
       },
       // Category pages
       {
@@ -134,19 +152,19 @@ export const router = createBrowserRouter([
       },
       {
         path: 'terms',
-        element: <TermsPage />,
+        element: <LazyPage><TermsPage /></LazyPage>,
       },
       {
         path: 'privacy',
-        element: <PrivacyPage />,
+        element: <LazyPage><PrivacyPage /></LazyPage>,
       },
       {
         path: 'returns',
-        element: <ReturnsPage />,
+        element: <LazyPage><ReturnsPage /></LazyPage>,
       },
       {
         path: '*',
-        element: <PlaceholderPage title="404" description="Strona nie została znaleziona" />,
+        element: <LazyPage><NotFoundPage /></LazyPage>,
       },
     ],
   },

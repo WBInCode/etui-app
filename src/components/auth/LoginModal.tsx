@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Eye, EyeOff, Mail, Lock, User, Loader2 } from 'lucide-react';
 import { useAuthStore } from '@/stores/useAuthStore';
 import { Button } from '@/components/ui/Button';
+import { siteConfig } from '@/site.config';
 import { cn } from '@/lib/utils';
 
 export function LoginModal() {
@@ -112,7 +113,7 @@ export function LoginModal() {
                 <p className="text-muted-foreground mt-1">
                   {loginModalMode === 'login'
                     ? 'Witaj z powrotem! Zaloguj się do swojego konta.'
-                    : 'Dołącz do YourBrand i twórz unikalne etui.'}
+                    : `Dołącz do ${siteConfig.name} i twórz unikalne etui.`}
                 </p>
               </div>
 

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { siteConfig } from '@/site.config';
 import { Menu, X, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { CartIcon } from '@/components/cart';
@@ -96,7 +97,7 @@ export function Navbar() {
                 <BrandLogo className="w-6 h-6 text-background" />
               </div>
               <div className="hidden sm:block">
-                <span className="font-bold text-2xl text-foreground">YourBrand</span>
+                <span className="font-bold text-2xl text-foreground">{siteConfig.name}</span>
                 <span className="text-primary font-bold text-2xl">.</span>
               </div>
             </Link>

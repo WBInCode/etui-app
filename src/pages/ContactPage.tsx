@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Check } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { siteConfig } from '@/site.config';
 
 export function ContactPage() {
   const [formState, setFormState] = useState({
@@ -58,10 +59,10 @@ export function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Email</h3>
                   <a
-                    href="mailto:kontakt@yourbrand.pl"
+                    href={`mailto:${siteConfig.email.general}`}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    kontakt@yourbrand.pl
+                    {siteConfig.email.general}
                   </a>
                 </div>
               </div>
@@ -93,8 +94,8 @@ export function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Adres</h3>
                   <p className="text-muted-foreground">
-                    ul. Twoja Ulica 1<br />
-                    00-001 Twoje Miasto<br />
+                    {siteConfig.address.street}<br />
+                    {siteConfig.address.zip} {siteConfig.address.city}<br />
                     Polska
                   </p>
                 </div>

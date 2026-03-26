@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Heart, Leaf, Users, Award } from 'lucide-react';
+import { siteConfig } from '@/site.config';
 
 const values = [
   {
@@ -41,7 +42,7 @@ export function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl font-bold text-foreground mb-4">O YourBrand</h1>
+          <h1 className="text-4xl font-bold text-foreground mb-4">O {siteConfig.name}</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Jesteśmy polską marką, która wierzy, że każdy zasługuje na coś unikalnego.
           </p>
@@ -57,7 +58,7 @@ export function AboutPage() {
             <h2 className="text-3xl font-bold text-foreground mb-6">Nasza historia</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                YourBrand powstało w 2023 roku z prostej obserwacji: ludzie chcą wyrażać 
+                {siteConfig.name} powstało w 2023 roku z prostej obserwacji: ludzie chcą wyrażać 
                 siebie poprzez przedmioty, których używają na co dzień. Telefon jest z nami 
                 24/7 – dlaczego więc nie sprawić, by był wyjątkowy?
               </p>
